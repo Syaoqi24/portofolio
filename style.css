@@ -1,0 +1,43 @@
+/* Fluid stat number color */
+.stat-num { color: #FFD60A; }
+
+/* Nav hide-on-scroll */
+nav.nav-hidden { transform: translateY(-100%); }
+
+/* Scrollbar hide for nav mobile links */
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { scrollbar-width: none; }
+
+/* Experience collapsible */
+.exp-body {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height .35s ease, margin-top .35s ease;
+}
+.exp-item.open .exp-body {
+  max-height: 400px;
+  margin-top: 14px;
+}
+
+/* Project card hover shift + filter hide */
+.proj-card:hover { padding-left: 8px; }
+.proj-card.hidden { display: none; }
+
+/* Filter button active state */
+.filter-btn.active {
+  background: #FFD60A;
+  color: #0a0a0a;
+  border-color: #FFD60A;
+}
+
+/* Certificates collapsible + filter hide */
+.certs-list {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height .5s ease;
+}
+.certs-list.open {
+  max-height: 900px;
+  margin-top: 20px;
+}
+.cert-item.hidden { display: none; }
