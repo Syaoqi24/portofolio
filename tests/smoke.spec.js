@@ -18,3 +18,11 @@ test('pengalaman bisa dibuka dengan keyboard', async ({ page }) => {
   await page.keyboard.press('Enter');
   await expect(item).toHaveClass(/open/);
 });
+
+test('tag Umami terpasang sekali dan tidak ada sisa teks', async ({ page }) => {
+  await page.goto('./');
+  await expect(page.locator('script[data-website-id]')).toHaveCount(1);
+  const text = await page.locator('body').innerText();
+  expect(text).not.toContain('data-website-id');
+  expect(text).not.toContain('ID Anda');
+});
