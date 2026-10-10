@@ -32,6 +32,16 @@ document.querySelectorAll('.exp-item').forEach(item => {
   });
 });
 
+// Certificates toggle
+const certsToggle = document.getElementById('certs-toggle');
+const certsList = document.getElementById('certs-list');
+certsToggle.addEventListener('click', () => {
+  certsList.classList.toggle('open');
+  certsToggle.textContent = certsList.classList.contains('open')
+    ? '− Sembunyikan sertifikat'
+    : '+ Lihat semua sertifikat (9)';
+});
+
 // Project filter
 const projFilterBtns = document.querySelectorAll('.proj-filter-row .filter-btn');
 const projCards = document.querySelectorAll('.proj-card');

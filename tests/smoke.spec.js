@@ -26,3 +26,9 @@ test('tag Umami terpasang sekali dan tidak ada sisa teks', async ({ page }) => {
   expect(text).not.toContain('data-website-id');
   expect(text).not.toContain('ID Anda');
 });
+
+test('tombol sertifikat membuka daftar', async ({ page }) => {
+  await page.goto('./');
+  await page.click('#certs-toggle');
+  await expect(page.locator('#certs-list')).toHaveClass(/open/);
+});
