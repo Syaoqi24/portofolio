@@ -21,17 +21,15 @@ window.addEventListener('scroll', () => {
 
 // Experience timeline expand/collapse
 document.querySelectorAll('.exp-item').forEach(item => {
-  item.addEventListener('click', () => item.classList.toggle('open'));
-});
-
-// Certificates toggle
-const certsToggle = document.getElementById('certs-toggle');
-const certsList = document.getElementById('certs-list');
-certsToggle.addEventListener('click', () => {
-  certsList.classList.toggle('open');
-  certsToggle.textContent = certsList.classList.contains('open')
-    ? '− Sembunyikan sertifikat'
-    : '+ Lihat semua sertifikat (9)';
+  item.setAttribute('tabindex', '0');
+  item.setAttribute('role', 'button');
+  const sync = () => item.setAttribute('aria-expanded', item.classList.contains('open'));
+  sync();
+  const toggle = () => { item.classList.toggle('open'); sync(); };
+  item.addEventListener('click', toggle);
+  item.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggle(); }
+  });
 });
 
 // Project filter
