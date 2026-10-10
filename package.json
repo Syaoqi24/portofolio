@@ -3,10 +3,12 @@
   "version": "1.0.0",
   "description": "",
   "main": "script.js",
-  "scripts": {
+"scripts": {
   "dev": "vite",
   "build": "vite build",
-  "preview": "vite preview"
+  "preview": "vite preview",
+  "lint": "eslint src",
+  "test": "playwright test"
 },
   "repository": {
     "type": "git",
@@ -21,7 +23,11 @@
   },
   "homepage": "https://github.com/Syaoqi24/portofolio#readme",
   "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "@playwright/test": "^1.64.0",
     "autoprefixer": "^10.6.1",
+    "eslint": "^10.12.0",
+    "globals": "^17.13.0",
     "postcss": "^8.5.29",
     "tailwindcss": "^3.4.19",
     "vite": "^8.3.4"
