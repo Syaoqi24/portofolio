@@ -18,3 +18,10 @@ test('pengalaman bisa dibuka dengan keyboard', async ({ page }) => {
   await page.keyboard.press('Enter');
   await expect(item).toHaveClass(/open/);
 });
+
+test('tidak ada sisa teks konfigurasi di halaman', async ({ page }) => {
+  await page.goto('./');
+  const text = await page.locator('body').innerText();
+  expect(text).not.toContain('data-website-id');
+  expect(text).not.toContain('(ID Anda)');
+});
