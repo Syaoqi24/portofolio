@@ -1,3 +1,5 @@
+import './style.css';
+
 // Scroll progress bar + hide nav on scroll down
 const progressBar = document.getElementById('scroll-progress');
 const navEl = document.querySelector('nav');

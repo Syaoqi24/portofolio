@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 /* Fluid stat number color */
 .stat-num { color: #FFD60A; }
 
