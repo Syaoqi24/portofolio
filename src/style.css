@@ -45,3 +45,9 @@ nav.nav-hidden { transform: translateY(-100%); }
   margin-top: 20px;
 }
 .cert-item.hidden { display: none; }
+
+
+/* Typewriter cursor */
+.tw-cursor { display: inline-block; margin-left: 2px; animation: tw-blink 1s steps(1) infinite; }
+@keyframes tw-blink { 50% { opacity: 0; } }
+@media (prefers-reduced-motion: reduce) { .tw-cursor { animation: none; } }
