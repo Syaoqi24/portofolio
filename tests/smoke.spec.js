@@ -63,3 +63,13 @@ test('semua section ter-render dari data', async ({ page }) => {
   await page.click('#certs-toggle');
   await expect(page.locator('.cert-item')).toHaveCount(9);
 });
+
+test('toggle tema mengganti data-theme dan pilihannya tersimpan', async ({ page }) => {
+  await page.goto('./');
+  const html = page.locator('html');
+  await expect(html).toHaveAttribute('data-theme', 'dark');
+  await page.click('#theme-toggle');
+  await expect(html).toHaveAttribute('data-theme', 'light');
+  await page.reload();
+  await expect(html).toHaveAttribute('data-theme', 'light');
+});
