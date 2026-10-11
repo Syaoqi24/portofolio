@@ -1,8 +1,9 @@
 {
   "name": "portofolio",
   "version": "1.0.0",
-  "description": "",
-  "main": "script.js",
+  "private": true,
+  "description": "Personal portfolio built with Vite and Tailwind, with CI/CD on GitHub Actions.",
+  
   "scripts": {
     "dev": "vite",
     "build": "vite build",
