@@ -1,4 +1,6 @@
 import './style.css';
+import { renderAll } from './render.js';
+renderAll('en');
 
 // Scroll progress bar + hide nav on scroll down
 const progressBar = document.getElementById('scroll-progress');
@@ -38,8 +40,8 @@ const certsList = document.getElementById('certs-list');
 certsToggle.addEventListener('click', () => {
   certsList.classList.toggle('open');
   certsToggle.textContent = certsList.classList.contains('open')
-    ? '− Sembunyikan sertifikat'
-    : '+ Lihat semua sertifikat (9)';
+    ? '− Hide certificates'
+    : '+ Show all certificates (list)';
 });
 
 // Project filter
@@ -131,3 +133,27 @@ document.getElementById('back-to-top').addEventListener('click', (e) => {
   e.preventDefault();
   window.scrollTo({ top: 0, behavior: 'smooth' });
 });
+
+// Typewriter (hero)
+const twEl = document.getElementById('typewriter');
+if (twEl) {
+  const phrases = JSON.parse(twEl.dataset.phrases);
+  const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (reduced) {
+    twEl.textContent = phrases.join(' & ');
+  } else {
+    let p = 0;
+    let i = phrases[0].length;
+    let deleting = true;
+    const tick = () => {
+      const full = phrases[p];
+      i += deleting ? -1 : 1;
+      twEl.textContent = full.slice(0, i);
+      let delay = deleting ? 40 : 80;
+      if (!deleting && i === full.length) { deleting = true; delay = 1800; }
+      else if (deleting && i === 0) { deleting = false; p = (p + 1) % phrases.length; delay = 350; }
+      setTimeout(tick, delay);
+    };
+    setTimeout(tick, 1800);
+  }
+}
