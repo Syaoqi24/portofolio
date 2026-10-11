@@ -3,8 +3,13 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        bg: '#0a0a0a', bgsoft: '#141414', bgsoft2: '#1b1b1b',
-        ink: '#f5f5f3', inkdim: '#9a9a9a', accent: '#FFD60A', line: '#262626'
+        bg: 'rgb(var(--bg) / <alpha-value>)',
+        bgsoft: 'rgb(var(--bgsoft) / <alpha-value>)',
+        bgsoft2: 'rgb(var(--bgsoft2) / <alpha-value>)',
+        ink: 'rgb(var(--ink) / <alpha-value>)',
+        inkdim: 'rgb(var(--inkdim) / <alpha-value>)',
+        accent: 'rgb(var(--accent) / <alpha-value>)',
+        line: 'rgb(var(--line) / <alpha-value>)'
       },
       fontFamily: {
         sans: ['Inter', 'sans-serif'],

@@ -1,9 +1,15 @@
-Index · HTML
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<script>
+  try {
+    document.documentElement.dataset.theme = localStorage.getItem('theme') === 'light' ? 'light' : 'dark';
+  } catch (e) {
+    document.documentElement.dataset.theme = 'dark';
+  }
+</script>
 <meta name="description" content="Portfolio of Mohammad Syaoqi Ramadhan: data analyst moving into fullstack development. Dashboards, Python automation, and web projects.">
 <meta property="og:title" content="Mohammad Syaoqi Ramadhan — Portfolio">
 <meta property="og:description" content="Data analyst moving into fullstack development.">
@@ -28,12 +34,17 @@ Index · HTML
       <span class="w-7 h-7 rounded-md bg-accent text-bg flex items-center justify-center font-mono font-bold text-xs shrink-0">SQ</span>
       
     </div>
-    <div class="flex gap-5 text-xs text-inkdim overflow-x-auto no-scrollbar">
-      <a href="#about" class="hover:text-accent transition">About</a>
-      <a href="#experience" class="hover:text-accent transition">Experience</a>
-      <a href="#projects" class="hover:text-accent transition">Projects</a>
-      <a href="#skills" class="hover:text-accent transition">Skills</a>
-      <a href="#contact" class="hover:text-accent transition">Contact</a>
+    <div class="flex items-center gap-4 min-w-0">
+      <div class="flex gap-5 text-xs text-inkdim overflow-x-auto no-scrollbar">
+        <a href="#about" class="hover:text-accent transition">About</a>
+        <a href="#experience" class="hover:text-accent transition">Experience</a>
+        <a href="#projects" class="hover:text-accent transition">Projects</a>
+        <a href="#skills" class="hover:text-accent transition">Skills</a>
+        <a href="#contact" class="hover:text-accent transition">Contact</a>
+      </div>
+      <button id="theme-toggle" type="button" aria-label="Switch to light theme" class="shrink-0 w-8 h-8 flex items-center justify-center rounded-full border border-line text-inkdim hover:text-accent hover:border-accent transition">
+        <span id="theme-icon" aria-hidden="true">☀</span>
+      </button>
     </div>
   </div>
 </nav>
@@ -155,7 +166,7 @@ Index · HTML
   </div>
  
   <div class="border-t border-line py-6 flex justify-between items-center flex-wrap gap-3.5">
-    <div class="font-extrabold text-[15px]">&copy; 2026<br> Mohammad <br>  Syaoqi<br> Ramadhan</div>
+    <div class="font-extrabold text-[15px]">&copy; 2026 Mohammad Syaoqi   Ramadhan</div>
     <div class="flex gap-5 text-[13px]">
       <a href="https://github.com/Syaoqi24" target="_blank" class="text-inkdim hover:text-accent transition">GitHub ↗</a>
       <a href="https://linkedin.com/in/msyaoqiramadhan" target="_blank" class="text-inkdim hover:text-accent transition">LinkedIn ↗</a>
